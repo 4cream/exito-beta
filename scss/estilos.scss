@@ -1,0 +1,257 @@
+// ------------------------------------------------------
+//  PATRON DE COLOR SCSS
+// ------------------------------------------------------
+$texto: #2D2927;
+$principal: #F9E516;
+$secundario: #C12A21;
+$complementario: #ECECEC;
+
+// ------------------------------------------------------
+//  ESTILOS GENERALES
+// ------------------------------------------------------
+html{
+  font-size: 13px;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background: $complementario;
+}
+
+// ------------------------------------------------------
+//  ENCABEZADO header
+// ------------------------------------------------------
+.encabezado{
+  background: white;
+  border-bottom: 3px solid $principal;
+}
+.container-menu{
+  padding: 10px;
+  text-align: center;
+}
+.logo img {
+  width: 50px;
+  height: auto;
+}
+
+// ------------------------------------------------------
+//  MENU PRINCIPAL
+// ------------------------------------------------------
+.menu {
+  background: rgba(45, 41, 39, 0.93);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: -100vw;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  transition: .5s;
+}
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+.menu .link {
+  margin-top: 2rem;
+  cursor: pointer;
+}
+.menu .link a{
+  text-decoration: none;
+  color: white;
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+.menu .link:active{
+  transform: scale(.8);
+}
+.menu.is-active{
+  left: 0;
+}
+.hamburguesa {
+  color: $texto;
+  font-size: 1.6rem;
+  background: $complementario;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 4;
+  display: block;
+}
+
+// ------------------------------------------------------
+//  SLIDER
+// ------------------------------------------------------
+
+.carousel-indicators{
+  z-index: 1;
+}
+.carousel .carousel-inner .carousel-item {
+  height: 50vh;
+}
+.carousel .carousel-inner .carousel-item.uno {
+  background: url("../imagenes/publicidad-exito/publicidad1-cel.jpg") no-repeat center;
+  background-size: cover;
+}
+.carousel .carousel-inner .carousel-item.dos {
+  background: url("../imagenes/publicidad-exito/publicidad2-cel.jpg") no-repeat center;
+  background-size: cover;
+}
+.carousel .carousel-inner .carousel-item.tres {
+  background: url("../imagenes/publicidad-exito/publicidad3-cel.jpg") no-repeat center;
+  background-size: cover;
+}
+.carousel-indicators li {
+    background-color: black;
+}
+
+// ------------------------------------------------------
+//  FOOTER
+// ------------------------------------------------------
+
+
+.pie-pagina {
+  background-color: $texto;
+  background-size: cover;
+  padding: 2rem 0;
+}
+
+.pie-pagina p{
+  color: white;
+  margin-top: 0;
+  margin-bottom: 0;
+
+}
+
+
+.pie-pagina ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.pie-pagina li{
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.pie-pagina li a{
+  color: white;
+  font-size: 2rem;
+}
+
+
+// ------------------------------------------------------
+//  BOTON IR-ARRIBA
+// ------------------------------------------------------
+.ir-arriba {
+  position: fixed;
+  bottom: 2rem;
+  right: 1rem;
+  color: $secundario;
+  font-size: 2.6rem;
+  z-index: 99999;
+  text-decoration: none;
+  line-height: 0;
+  display: none;
+}
+.ir-arriba:hover,
+.ir-arriba:focus {
+    outline: 0;
+    text-decoration: none;
+    color: $principal;
+}
+
+// ------------------------------------------------------
+//  MEDIA QUERY PARA PANTALLAS DE 768px
+// ------------------------------------------------------
+@media screen and (min-width:768px){
+  html{
+    font-size: 16px;
+  }
+  .container-menu{
+    display: flex;
+  }
+  .logo img {
+    margin-left: 9rem;
+  }
+
+  // ------------------------------------------------------
+  //  MENU PRINCIPAL
+  // ------------------------------------------------------
+  .menu {
+    background: transparent;
+    position: inherit;
+    z-index: 0;
+    left: -100vw;
+    transition: 0s;
+  }
+  .menu ul {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 9rem;
+    margin-bottom: inherit;
+    margin-top: inherit;
+  }
+  .menu .link {
+    margin-top: 0;
+    margin-right: 2rem;
+  }
+  .menu .link a {
+    font-size: 1rem;
+    color: $texto;
+  }
+  .hamburguesa {
+    display: none;
+  }
+
+  // ------------------------------------------------------
+  //  SLIDER
+  // ------------------------------------------------------
+  .carousel .carousel-inner .carousel-item {
+    height: 80vh;
+  }
+  .carousel .carousel-inner .carousel-item.uno {
+    background: url("../imagenes/publicidad-exito/publicidad1-normal.jpg") no-repeat center;
+    background-size: cover;
+  }
+  .carousel .carousel-inner .carousel-item.dos {
+    background: url("../imagenes/publicidad-exito/publicidad2-normal.jpg") no-repeat center;
+    background-size: cover;
+  }
+  .carousel .carousel-inner .carousel-item.tres {
+    background: url("../imagenes/publicidad-exito/publicidad3-normal.jpg") no-repeat center;
+    background-size: cover;
+  }
+
+}
+
+// ------------------------------------------------------
+//  MEDIA QUERY PARA PANTALLAS DE 1200px xl
+// ------------------------------------------------------
+@media screen and (min-width:1200px){
+
+  .carousel .carousel-inner .carousel-item.uno {
+    background: url("../imagenes/publicidad-exito/publicidad1-grande.jpg") no-repeat center;
+    background-size: cover;
+  }
+  .carousel .carousel-inner .carousel-item.dos {
+    background: url("../imagenes/publicidad-exito/publicidad2-grande.jpg") no-repeat center;
+    background-size: cover;
+  }
+  .carousel .carousel-inner .carousel-item.tres {
+    background: url("../imagenes/publicidad-exito/publicidad3-grande.jpg") no-repeat center;
+    background-size: cover;
+  }
+
+}
